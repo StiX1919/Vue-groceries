@@ -9,7 +9,7 @@
                             class='numInput'
                             
                             placeholder="Input Qty" 
-                            :value='quantity' 
+                            v-model='quantity' 
                             @change="updateAmount"
                             />
                     <v-btn color='green' icon small :disabled="quantity < 1" @click='addToCart({grocery, quantity})'>+</v-btn>
@@ -51,7 +51,7 @@ export default {
         },
         addToCart: function(obj) {
             this.addItem(obj)
-            this.quantity = 0
+            this.quantity = 1
         }
     },
     computed: {

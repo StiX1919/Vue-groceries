@@ -4,7 +4,7 @@
             <div class="itemHeader" >
                 <h2>{{item.grocery.item}}</h2>
                 <input type='number' 
-                            :value='item.quantity' 
+                            v-model='item.quantity' 
                             @change="changeAmount"
                             class='itemQuantity'
                     />
