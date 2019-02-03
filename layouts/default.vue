@@ -19,24 +19,6 @@
         </div>
       </v-container>
     </v-content>
-  
-    <v-navigation-drawer
-      v-model='clipped'
-      absolute
-      temporary
-      app
-      right
-      width='600'
-    >
-      <v-toolbar>
-        <v-toolbar-title>Current Cart</v-toolbar-title>
-        <v-spacer />
-        <v-btn color='black' icon small @click='clipped = !clipped'>X</v-btn>
-      </v-toolbar>
-
-      
-
-    </v-navigation-drawer>
     <cart-component :openCart='openCart' :clipped='clipped' :cart='cart'/>
     
   </v-app>

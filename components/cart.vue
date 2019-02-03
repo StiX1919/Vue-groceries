@@ -1,13 +1,13 @@
 <template>
     <v-navigation-drawer
       v-model='clipped'
-      absolute
+      fixed
       temporary
       app
       right
       width='600'
       class='cart'
-      
+      height='100vh'
     >
       <v-toolbar>
         <v-toolbar-title>Current Cart</v-toolbar-title>
