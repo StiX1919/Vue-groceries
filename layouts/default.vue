@@ -7,7 +7,7 @@
     >
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn icon @click="openCart">
+      <v-btn icon @click="clipped = !clipped">
         <v-img class='cartImg'  src='https://www.freeiconspng.com/uploads/cart-icon-16.png'/>
       </v-btn>
     </v-toolbar>
@@ -21,29 +21,36 @@
     </v-content>
   
     <v-navigation-drawer
-      :clipped='clipped'
+      v-model='clipped'
       absolute
       temporary
-    >
-      <h1>Hello!!!</h1>
-    </v-navigation-drawer>
-
-    <v-footer
-      :fixed="fixed"
       app
+      right
+      width='600'
     >
-      <span>&copy; 2019</span>
-    </v-footer>
+      <v-toolbar>
+        <v-toolbar-title>Current Cart</v-toolbar-title>
+        <v-spacer />
+        <v-btn color='black' icon small @click='clipped = !clipped'>X</v-btn>
+      </v-toolbar>
+
+      
+
+    </v-navigation-drawer>
+    <cart-component :openCart='openCart' :clipped='clipped' :cart='cart'/>
+    
   </v-app>
 </template>
 
 <script>
 import axios from 'axios'
 import GroceryCard from '../components/groceryCard'
+import CartComponent from '../components/cart'
 
 export default {
   components: {
-    GroceryCard
+    GroceryCard,
+    CartComponent
   },
   data() {
     return {
@@ -76,8 +83,20 @@ export default {
   },
   methods: {
     addToCart: function(item) {
-      console.log(item)
-      this.cart.push(item)
+      let inside = false
+
+      this.cart.map((cartItem, index) => {
+        if(item.grocery.item === cartItem.grocery.item) {
+          inside = true;
+
+          this.cart[index].quantity = +item.quantity + +this.cart[index].quantity
+        }
+      })
+
+      if(inside === false){
+        this.cart.push(item)
+      }
+
       console.log(this.cart)
     },
     openCart: function(){
@@ -103,4 +122,5 @@ export default {
 
    margin-left: 3px
   }
+
 </style>
