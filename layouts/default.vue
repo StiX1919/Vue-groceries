@@ -12,7 +12,7 @@
       </v-btn>
     </v-toolbar>
 
-    <v-content>
+    <v-content >
       <v-container>
         <div class='gCardHolder'>
           <GroceryCard v-for='item in groceries' :key='item.item' :grocery='item' :addItem='addToCart'/>
@@ -122,5 +122,6 @@ export default {
 
    margin-left: 3px
   }
+  
 
 </style>

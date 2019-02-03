@@ -6,6 +6,8 @@
       app
       right
       width='600'
+      class='cart'
+      
     >
       <v-toolbar>
         <v-toolbar-title>Current Cart</v-toolbar-title>
@@ -26,10 +28,10 @@
                 :item='item' 
                 :cart='cart'
                 :removeItem='removeItem'/>
-        <v-footer >
-            <h3>Total:</h3>
-            <h3>{{cartTotal}}</h3>
-        </v-footer>
+        <div class='footer'>
+            <v-divider />
+            <h1>Total: {{cartTotal}}</h1>
+        </div>
             
     </v-navigation-drawer>
 
@@ -76,6 +78,11 @@ export default {
 </script>
 
 <style>
+    .cart {
+        display: flex;
+        flex-direction: column;
+        height: 100vh
+    }
     .detailHeader {
       width: 60%;
       display: flex;
@@ -83,4 +90,14 @@ export default {
 
       margin-top: 20px
   }
+  .footer{
+      width: 100%;
+      height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+
+  }
+  
 </style>

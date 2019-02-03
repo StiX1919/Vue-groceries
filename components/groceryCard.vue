@@ -39,7 +39,7 @@ export default {
             price: 0,
             fakeImg: 'http://www.independentmediators.co.uk/wp-content/uploads/2016/02/placeholder-image.jpg',
             hovering: false,
-            quantity: 0
+            quantity: 1
         }
     },
     methods: {
