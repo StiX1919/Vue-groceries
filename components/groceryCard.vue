@@ -1,5 +1,8 @@
 <template>
     <v-card class='gCard' @mouseover="cardHover" @mouseout="cardHover">
+        <div class='cartQuantity' v-if='cartQuantity'>
+            <h3>{{cartQuantity}} in cart</h3>
+        </div>
         <img class='gImg' :src='fakeImg' :alt='placeHolderImg'/>
         <div class='gDetails'>
             <h2>{{grocery.item}}</h2>
@@ -30,16 +33,18 @@ export default {
             item: String,
             category: String,
             price: Number,
-            imageUrl: String
+            imageUrl: String,
+            
         },
-        addItem: Function
+        addItem: Function,
+        cartQuantity: Number
     },
     data() {
         return {
             price: 0,
             fakeImg: 'http://www.independentmediators.co.uk/wp-content/uploads/2016/02/placeholder-image.jpg',
             hovering: false,
-            quantity: 1
+            quantity: 1,
         }
     },
     methods: {
@@ -62,8 +67,10 @@ export default {
         },
         placeHolderImg: function(){
             return `Picture of ${this.grocery.item}`
-        }
+        },
+        
     }
+
   
 }
 </script>
@@ -97,5 +104,19 @@ export default {
     .numInput {
         width: 40px;
         height: 30px
+    }
+
+    .cartQuantity {
+        position: absolute;
+
+        right: 0px;
+        bottom: 60px;
+        color: white;
+        background-color: #424242;
+        height: 30px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center
     }
 </style>

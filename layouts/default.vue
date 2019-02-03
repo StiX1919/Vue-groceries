@@ -30,7 +30,11 @@
       </div>
       <v-container>
         <div class='gCardHolder' label='Outline style'>
-          <GroceryCard v-for='item in sortedItems' :key='item.item' :grocery='item' :addItem='addToCart'/>
+          <GroceryCard v-for='item in sortedItems' 
+                      :key='item.item' 
+                      :grocery='item' 
+                      :addItem='addToCart' 
+                      :cartQuantity='cartQuantity(item.item)'/>
         </div>
       </v-container>
     </v-content>
@@ -112,6 +116,21 @@ export default {
       this.clipped = false
       console.log(e.target)
       this.searchItem = e.target.value
+    },
+
+    cartQuantity: function(name){
+      let quantity = 0
+      if(this.cart[0]){
+        let item = this.cart.find(item => {
+          return item.grocery.item === name
+        })
+        console.log(item, 'found item')
+        if(item !== undefined){
+          quantity = item.quantity
+        }
+      }
+      console.log(quantity, 'in func')
+      return quantity
     }
   },
   computed: {
