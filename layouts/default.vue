@@ -33,7 +33,7 @@
           <GroceryCard v-for='item in sortedItems' 
                       :key='item.item' 
                       :grocery='item' 
-                      :addItem='addToCart' 
+                      @addItem='addToCart' 
                       :cartQuantity='cartQuantity(item.item)'/>
         </div>
       </v-container>
@@ -80,7 +80,7 @@ export default {
   mounted() {
       axios.get('/api/getList').then(response => {
         this.groceries = response.data.list
-        console.log(this.groceries)
+        
     }).catch(err => console.log(err, 'error'))
     
   },
@@ -101,7 +101,7 @@ export default {
         this.cart.push(item)
       }
 
-      console.log(this.cart)
+
     },
     openCart: function(){
       this.clipped = !this.clipped
@@ -114,7 +114,7 @@ export default {
     },
     searchInput: function(e){
       this.clipped = false
-      console.log(e.target)
+      
       this.searchItem = e.target.value
     },
 
@@ -124,12 +124,12 @@ export default {
         let item = this.cart.find(item => {
           return item.grocery.item === name
         })
-        console.log(item, 'found item')
+        
         if(item !== undefined){
           quantity = item.quantity
         }
       }
-      console.log(quantity, 'in func')
+      
       return quantity
     }
   },
@@ -142,7 +142,7 @@ export default {
           list.push(item.category)
         }
       })
-      console.log(list, 'list')
+      
       return list
     },
     sortedItems: function(){

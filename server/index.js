@@ -11,7 +11,7 @@ config.dev = !(process.env.NODE_ENV === 'production')
 
 
 app.get('/api/getList', (req, res) => {
-  console.log('hit', list);
+  
   res.status(200).send(list)
 })
 

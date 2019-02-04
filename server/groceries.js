@@ -4,19 +4,19 @@ module.exports = {
             "item": "Eggs",
             "category": "dairy",
             "price": 1.30,
-            "imageUrl": ""
+            "imageUrl": "https://media.self.com/photos/5ad4f965164ba7734f61bdb2/4:3/w_728,c_limit/GettyImages-583839283.jpg"
         },
         {
             "item": "Milk",
             "category": "dairy",
             "price": 3.60,
-            "imageUrl": ""
+            "imageUrl": "https://hoards.com/images/gallon-on-milk.14183.jpg"
         },
         {
             "item": "Cheese",
             "category": "dairy",
             "price": 9.70,
-            "imageUrl": ""
+            "imageUrl": "https://www.washingtonsgreengrocer.com/sites/default/files/styles/product-teaser/public/product-images/Screen%20Shot%202017-10-08%20at%208.57.30%20PM.png?itok=VI98Uqv2"
         },
         {
             "item": "Yogurt",

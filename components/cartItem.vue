@@ -13,7 +13,7 @@
                 <div >
                     
                 </div>
-                <v-btn color='red' icon small @click='removeItem(index)'>X</v-btn>
+                <v-btn color='red' icon small @click='deleteItem(index)'>X</v-btn>
             </div>
             <v-divider v-if='index + 1 < cart.length'/>
         </div>
@@ -37,6 +37,9 @@ export default {
   methods: {
       changeAmount: function(e){
           this.cart[this.index].quantity = e.target.value
+      },
+      deleteItem(index){
+          this.$emit('removeItem', index)
       }
   },
   computed: {

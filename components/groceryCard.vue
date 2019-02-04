@@ -3,7 +3,7 @@
         <div class='cartQuantity' v-if='cartQuantity'>
             <h3>{{cartQuantity}} in cart</h3>
         </div>
-        <img class='gImg' :src='fakeImg' :alt='placeHolderImg'/>
+        <img class='gImg' :src='imageUrl' :alt='placeHolderImg'/>
         <div class='gDetails'>
             <h2>{{grocery.item}}</h2>
             <div class='gDetails'>
@@ -49,13 +49,14 @@ export default {
     },
     methods: {
         cardHover: function() {
+            console.log(this.imageUrl, 'thing')
             this.hovering = !this.hovering
         },
         updateAmount: function(e){
             this.quantity = e.target.value
         },
         addToCart: function(obj) {
-            this.addItem(obj)
+            this.$emit('addItem', obj)
             this.quantity = 1
         }
     },

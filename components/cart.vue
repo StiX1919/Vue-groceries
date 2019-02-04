@@ -27,7 +27,7 @@
                 :index='index'
                 :item='item' 
                 :cart='cart'
-                :removeItem='removeItem'/>
+                @removeItem='removeItem'/>
         <div class='footer'>
             <v-divider />
             <h1>Total: {{cartTotal}}</h1>
@@ -65,11 +65,11 @@ export default {
           let total = 0
             if(this.cart[0]){
                 total = this.cart.reduce((acc, item) => {
-                    console.log(acc, 'in reduce', item.grocery.price * item.quantity)
+                    
                     return acc + (item.grocery.price * item.quantity)
                 }, 0)
             }
-            console.log('out of reduce', total)
+            
           return `$${total.toFixed(2)}`
       }
   }
