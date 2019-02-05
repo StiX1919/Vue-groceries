@@ -91,6 +91,7 @@ export default {
         align-items: center;
 
         margin-bottom: 20px;
+        margin-right: 5px;
         position: relative;
     }
     .gImg {
@@ -102,7 +103,9 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 40px;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+
+        margin: 0 10px;
     }
     .hoverDetails {
         display: flex;
@@ -128,4 +131,21 @@ export default {
         justify-content: center;
         align-items: center
     }
+
+
+    @media only screen and (max-width: 753px) {
+    .gCard {
+      height: 300px;
+      width: 330px;
+    }
+    .gImg {
+        height: 250px
+    }
+    .gDetails {
+        height: 50px
+    }
+    .cartQuantity {
+        bottom: 50px
+    }
+  } 
 </style>
