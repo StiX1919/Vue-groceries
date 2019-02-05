@@ -6,8 +6,8 @@
         <img class='gImg' :src='grocery.imageUrl' :alt='fakeImg'/>
         <div class='gDetails'>
             <h2>{{grocery.item}}</h2>
-            <div class='gDetails'>
-                <div class='gDetails' v-show="hovering">
+            <div class='hoverDetails'>
+                <div class='hoverDetails' v-show="hovering">
                     <input type='number' 
                             class='numInput'
                             
@@ -82,23 +82,32 @@ export default {
     }
 
     .gCard {
-        height: 300px;
-        width: 350px;
+        height: 200px;
+        width: 250px;
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
 
         margin-bottom: 20px;
         position: relative;
     }
     .gImg {
         width: 100%;
-        height: 80%
+        height: 160px
     }
     .gDetails {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        padding-bottom: 10px
+    }
+    .hoverDetails {
+        display: flex;
+        height: 40px;
+        justify-content: center;
         align-items: center
     }
     .numInput {
@@ -110,7 +119,7 @@ export default {
         position: absolute;
 
         right: 0px;
-        bottom: 60px;
+        bottom: 40px;
         color: white;
         background-color: #424242;
         height: 30px;

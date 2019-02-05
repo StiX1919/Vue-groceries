@@ -16,27 +16,28 @@
     </v-toolbar>
 
     <v-content >
-      <div class='sortBox'>
-        <v-flex xs12 sm6 d-flex>
-          <v-select 
-              :items='categories' 
-              placeholder="Sort by Category"
-              hide-selected
-              @change='sortByCat'
-              height='30'
-          />
-        </v-flex>
-        <input class='sortInput' placeholder='Search for product' v-model='searchItem'/>
-      </div>
-      <v-container>
-        <div class='gCardHolder' label='Outline style'>
-          <GroceryCard v-for='item in sortedItems' 
-                      :key='item.item' 
-                      :grocery='item' 
-                      @addItem='addToCart' 
-                      :cartQuantity='cartQuantity(item.item)'/>
+      <div class='content'>
+
+        <div class='sortBox'>
+          <input class='sortInput' placeholder='Search for product' v-model='searchItem'/>
+            <v-select 
+                :items='categories' 
+                placeholder="Sort by Category"
+                hide-selected
+                @change='sortByCat'
+                height='30'
+            />
         </div>
-      </v-container>
+        <v-container>
+          <div class='gCardHolder' label='Outline style'>
+            <GroceryCard v-for='item in sortedItems' 
+                        :key='item.item' 
+                        :grocery='item' 
+                        @addItem='addToCart' 
+                        :cartQuantity='cartQuantity(item.item)'/>
+          </div>
+        </v-container>
+      </div>
     </v-content>
     <cart-component :openCart='openCart' :clipped='clipped' :cart='cart'/>
     
@@ -161,6 +162,10 @@ export default {
 </script>
 
 <style>
+  .content {
+    display: flex
+  }
+
   .gCardHolder {
     display: flex;
     flex-wrap: wrap;
@@ -176,12 +181,14 @@ export default {
    margin-left: 3px
   }
   .sortBox {
-    display: flex;
-    height: 50px;
-    width: 50%
+    height: 500px;
+    width: 300px
   }
   .sortInput {
+    margin-top: 30px;
+    height: 32px;
 
+    border-bottom: 20px; 
   }
   
   .cartQty {
