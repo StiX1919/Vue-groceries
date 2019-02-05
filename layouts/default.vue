@@ -182,7 +182,10 @@ export default {
   }
   .sortBox {
     height: 500px;
-    width: 300px
+    width: 300px;
+
+    position: sticky;
+    top: 50px
   }
   .sortInput {
     margin-top: 30px;
