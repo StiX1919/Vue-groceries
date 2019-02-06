@@ -5,7 +5,7 @@
       temporary
       app
       right
-      width='600'
+      width='500'
       class='cart'
       height='100vh'
     >

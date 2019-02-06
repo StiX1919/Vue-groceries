@@ -206,7 +206,7 @@ export default {
     width: 55%;
     margin-left: 10px
   }
-  @media only screen and (max-width: 731px) {
+  /* @media only screen and (max-width: 731px) {
     .sortBox {
       width: 100%
     }
@@ -221,5 +221,5 @@ export default {
       height: 50px;
       width: 100%
     }
-  }
+  } */
 </style>
