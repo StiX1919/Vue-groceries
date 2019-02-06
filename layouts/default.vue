@@ -22,10 +22,10 @@
           <input class='sortInput' placeholder='Search for product' v-model='searchItem'/>
             <v-select 
                 :items='categories' 
-                placeholder="Sort by Category"
                 hide-selected
                 @change='sortByCat'
                 height='30'
+                label='Sort by Category'
             />
         </div>
         <v-container>
@@ -35,6 +35,7 @@
                         :grocery='item' 
                         @addItem='addToCart' 
                         :cartQuantity='cartQuantity(item.item)'/>
+            <AddItem />
           </div>
         </v-container>
       </div>
@@ -48,11 +49,13 @@
 import axios from 'axios'
 import GroceryCard from '../components/groceryCard'
 import CartComponent from '../components/cart'
+import AddItem from '../components/addItem'
 
 export default {
   components: {
     GroceryCard,
-    CartComponent
+    CartComponent,
+    AddItem
   },
   data() {
     return {
