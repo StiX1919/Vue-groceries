@@ -1,6 +1,6 @@
 <template>
     <v-card class='gCard' @mouseover="cardHover" @mouseout="cardHover">
-        <div class='cartQuantity' v-if='cartQuantity'>
+        <div :class='hovering ? "inCart" :"cartQuantity"' v-if='cartQuantity'>
             <h3>{{cartQuantity}} in cart</h3>
         </div>
         <img class='gImg' :src='grocery.imageUrl' :alt='fakeImg'/>
@@ -113,18 +113,7 @@ export default {
         justify-content: center;
         align-items: center
     }
-    .addBox {
-        display: flex;
-        height: 40px;
-        justify-content: space-around;
-        align-items: center;
-
-        position: absolute;
-        bottom: 0;
-        right: 50px;
-        background-color: #424242;
-        opacity: .9;
-    }
+    
     .numInput {
         width: 40px;
         height: 30px
@@ -135,6 +124,19 @@ export default {
 
         right: 0px;
         bottom: 40px;
+        color: white;
+        background-color: #424242;
+        height: 30px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    .inCart{
+        position: absolute;
+
+        right: 0px;
+        bottom: 70px;
         color: white;
         background-color: #424242;
         height: 30px;
