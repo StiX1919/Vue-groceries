@@ -6,7 +6,7 @@
             >
         <h3>Not finding what you're looking for?</h3>
 
-        <h4>Add new items here!!</h4>
+        <h4>Add new items here!! (WIP)</h4>
     </v-card>
 </template>
 
