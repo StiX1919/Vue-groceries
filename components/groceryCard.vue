@@ -7,7 +7,7 @@
         <div class='gDetails'>
             <h2>{{grocery.item}}</h2>
             <div class='hoverDetails'>
-                <div class='hoverDetails' v-show="hovering">
+                <div class='cartQuantity' v-show="hovering">
                     <input type='number' 
                             class='numInput'
                             
@@ -112,6 +112,18 @@ export default {
         height: 40px;
         justify-content: center;
         align-items: center
+    }
+    .addBox {
+        display: flex;
+        height: 40px;
+        justify-content: space-around;
+        align-items: center;
+
+        position: absolute;
+        bottom: 0;
+        right: 50px;
+        background-color: #424242;
+        opacity: .9;
     }
     .numInput {
         width: 40px;
