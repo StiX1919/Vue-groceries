@@ -2,17 +2,15 @@
         <div>
 
             <div class="itemHeader" >
-                <h2>{{item.grocery.item}}</h2>
+                <h2 class='itemName'>{{item.grocery.item}}</h2>
                 <input type='number' 
                             v-model='item.quantity' 
                             @change="changeAmount"
                             class='itemQuantity'
                     />
-                <h2>{{truePrice}}</h2>
+                <h2 class='truePrice'>{{truePrice}}</h2>
 
-                <div >
-                    
-                </div>
+                
                 <v-btn color='red' icon small @click='deleteItem(index)'>X</v-btn>
             </div>
             <v-divider v-if='index + 1 < cart.length'/>
@@ -64,6 +62,13 @@ export default {
   }
   .itemQuantity {
       width: 50px
+  }
+
+  .itemName {
+      width: 30%
+  }
+  .truePrice {
+      width: 20%
   }
 
 </style>

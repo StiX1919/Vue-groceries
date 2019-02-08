@@ -9,7 +9,7 @@
       class='cart'
       height='100vh'
     >
-      <v-toolbar>
+      <v-toolbar sticky>
         <v-toolbar-title>Current Cart</v-toolbar-title>
         <v-spacer />
         <v-btn color='black' icon small @click='openCart'>X</v-btn>
@@ -20,7 +20,7 @@
           <h3>Quantity</h3>
           <h3>Price</h3>
       </div>
-      <v-divider />
+      <div class='itemHolder'>
 
         <CartItem v-for='(item, index) in cart' 
                 :key='index' 
@@ -28,6 +28,9 @@
                 :item='item' 
                 :cart='cart'
                 @removeItem='removeItem'/>
+
+      </div>
+
         <div class='footer'>
             <v-divider />
             <h1>Total: {{cartTotal}}</h1>
@@ -84,12 +87,19 @@ export default {
         height: 100vh
     }
     .detailHeader {
-      width: 60%;
+      width: 80%;
       display: flex;
       justify-content: space-around;
 
       margin-top: 20px
   }
+
+    .itemHolder {
+        margin: 10px 0;
+        height: 70%;
+        overflow: scroll
+    }
+
   .footer{
       width: 100%;
       height: 50px;
