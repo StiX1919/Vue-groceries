@@ -7,6 +7,7 @@
         <h3>Not finding what you're looking for?</h3>
 
         <h4>Add new items here!! (WIP)</h4>
+        //flush out functionality. Change messages into inputs
     </v-card>
 </template>
 
