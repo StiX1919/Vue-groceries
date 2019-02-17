@@ -1,4 +1,5 @@
 <template>
+
   <v-app dark>
     <v-toolbar
       :clipped-left="clipped"
@@ -46,6 +47,9 @@
 </template>
 
 <script>
+
+//build front landing page to route to shopping cart
+
 import axios from 'axios'
 import GroceryCard from '../components/groceryCard'
 import CartComponent from '../components/cart'
