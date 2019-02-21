@@ -49,6 +49,7 @@
 <script>
 
 //build front landing page to route to shopping cart
+//Inlclude basic summery of app and button to route there
 
 import axios from 'axios'
 import GroceryCard from '../components/groceryCard'
